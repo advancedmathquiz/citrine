@@ -1,13 +1,23 @@
+
 {% extends "base.html" %}
 {% block content %}
-<h2>Welcome to Citrine World!</h2>
-<p>Explore the finest minerals and crystals.</p>
+<div class="hero-section">
+    <h2>Welcome to Citrine Elements</h2>
+    <p class="hero-text">Your Trusted Partner in Global Mineral Trade</p>
+    <div class="hero-cta">
+        <a href="{{ url_for('minerals') }}" class="cta-button">Explore Our Products</a>
+        <a href="{{ url_for('contact') }}" class="cta-button secondary">Contact Us</a>
+    </div>
+</div>
+
 <div class="grid">
     {% for mineral in minerals %}
     <div class="card">
         <img src="{{ url_for('static', filename='images/' + mineral.image) }}" alt="{{ mineral.name }}">
-        <h3>{{ mineral.name }}</h3>
-        <p>{{ mineral.description }}</p>
+        <div class="card-content">
+            <h3>{{ mineral.name }}</h3>
+            <p>{{ mineral.description }}</p>
+        </div>
     </div>
     {% endfor %}
 </div>

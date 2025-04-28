@@ -102,6 +102,48 @@ main {
   font-size: 0.9rem;
 }
 
+.about-section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.company-intro {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+  color: var(--text);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.about-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.about-card h3 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+.about-card ul {
+  list-style-position: inside;
+  margin-top: 1rem;
+}
+
+.about-card li {
+  margin: 0.5rem 0;
+  color: var(--text);
+}
+
 form {
   max-width: 400px;
   margin: 2rem auto;
