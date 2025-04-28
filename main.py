@@ -61,6 +61,15 @@ def add_mineral():
     db.session.commit()
     return redirect(url_for('admin_dashboard'))
 
+@app.route('/admin/delete/<int:mineral_id>', methods=['POST'])
+def delete_mineral(mineral_id):
+    if not session.get('admin'):
+        return redirect(url_for('admin_login'))
+    mineral = Mineral.query.get_or_404(mineral_id)
+    db.session.delete(mineral)
+    db.session.commit()
+    return redirect(url_for('admin_dashboard'))
+
 @app.route('/logout')
 def logout():
     session.pop('admin', None)

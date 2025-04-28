@@ -4,7 +4,7 @@
 {% block content %}
 <div class="admin-container">
     <h2>Admin Dashboard</h2>
-    
+
     <form method="POST" action="{{ url_for('add_mineral') }}" class="admin-form">
         <h3>Add New Mineral</h3>
         <input type="text" name="name" placeholder="Mineral Name" required>
@@ -22,6 +22,11 @@
                 <div class="card-content">
                     <h3>{{ mineral.name }}</h3>
                     <p>{{ mineral.description }}</p>
+
+                    <!-- Delete Mineral Button -->
+                    <form method="POST" action="{{ url_for('delete_mineral', mineral_id=mineral.id) }}">
+                        <button type="submit" class="delete-button">Delete</button>
+                    </form>
                 </div>
             </div>
             {% endfor %}
