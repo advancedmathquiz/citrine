@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Welcome to Citrine World!</h2>
+<p>Explore the finest minerals and crystals.</p>
+<div class="grid">
+    {% for mineral in minerals %}
+    <div class="card">
+        <img src="{{ url_for('static', filename='images/' + mineral.image) }}" alt="{{ mineral.name }}">
+        <h3>{{ mineral.name }}</h3>
+        <p>{{ mineral.description }}</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

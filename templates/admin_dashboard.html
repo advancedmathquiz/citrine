@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Admin Dashboard</h2>
+<h3>Add New Mineral</h3>
+<form method="POST" action="{{ url_for('add_mineral') }}">
+    <input type="text" name="name" placeholder="Mineral Name" required><br>
+    <textarea name="description" placeholder="Description" required></textarea><br>
+    <input type="text" name="image" placeholder="Image filename (e.g., citrine.jpg)" required><br>
+    <button type="submit">Add Mineral</button>
+</form>
+
+<h3>Existing Minerals</h3>
+<ul>
+    {% for mineral in minerals %}
+    <li>{{ mineral.name }}</li>
+    {% endfor %}
+</ul>
+
+<a href="{{ url_for('logout') }}">Logout</a>
+{% endblock %}
